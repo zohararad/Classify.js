@@ -35,19 +35,15 @@
   }
   
   var Class = this.Class = function(defs){
-    return function(){
-      var _self = arguments.callee, self = this;
+    return function callee(){
+      var self = this;
+      
       for(var def in defs){
         if(defs.hasOwnProperty(def)){
           var d = defs[def];
-          if(def.indexOf('_') === 0){
-            if(typeof(d) === 'function'){
-              _self[def] = d.bind(defs);
-            } else {
-              _self[def] = d;
-            }
-          } else {
-            self[def] = d.bind(defs);
+          if(def.indexOf('_') !== 0){
+            if (typeof(d) == 'function') self[def] = d.bind(defs);
+            else self[def] = d;
           }
         }
       }
