@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <title>Classify</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="Studio 3 http://aptana.com/" />
+  <meta name="author" content="Zohar Arad" />
+  <script src="js/classify.js"></script>
+</head>
+
+<body>
+  <script>
+    var MyClass = new Class({
+      initialize:function(word){
+        console.log('init',this._name);
+        this._speak(word);
+      },
+      _speak:function(word){
+        console.log(word);
+        this.run();
+      },
+      _name:'zohar',
+      run:function(){
+        console.log('running');
+      }
+    });
+    
+    var MyOtherClass = MyClass.extend({
+      talk:function(){
+        console.log('hi there');
+      }
+    })
+    var i = new MyClass('try');
+    var n = new MyOtherClass('catch');
+    i.talk();
+    n.talk();
+    //var c = new C();
+    //console.log(c);
+  </script>
+</body>
+</html>
