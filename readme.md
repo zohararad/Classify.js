@@ -27,11 +27,10 @@ To define a new class, simply call "new Class()" passing an object with class de
 
 ###Extending a class
 
-We can extend a class with public methods by calling the "extend" or the "implement" methods on our class definition.
+We can extend a class with public methods by calling the "implement" methods on our class definition.
 
 Calling "implement" will mix-in the new methods to our class prototype, thus making the new methods available to all instances.
 
-Calling "extend" will mix-in the new methods to a single copy of our class, thus making the new methods available for specific instances
 
 ####Usage:
 
@@ -40,9 +39,3 @@ Calling "extend" will mix-in the new methods to a single copy of our class, thus
         //available to all instances 
       }    
     });
-    
-    var MyOtherClass = MyClass.extend({
-      myThing:function(){
-        //available to instances of MyOtherClass
-      }    
-    })

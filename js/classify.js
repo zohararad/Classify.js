@@ -59,13 +59,4 @@
     }
     return this;
   }
-  
-  Function.prototype.extend = function(defs){
-    for(var def in defs){
-      if(defs.hasOwnProperty(def)){
-        this[def] = defs[def];
-      }
-    }
-    return this;
-  }
 })();
